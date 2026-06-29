@@ -9,6 +9,7 @@ interface MagneticButtonProps {
   onClick?: (e: React.MouseEvent) => void
   href?: string
   type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
 export default function MagneticButton({
@@ -19,6 +20,7 @@ export default function MagneticButton({
   onClick,
   href,
   type = 'button',
+  disabled = false,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -57,7 +59,7 @@ export default function MagneticButton({
   const Component = href ? motion.a : motion.button
   const props = href
     ? { href, target: '_blank', rel: 'noopener noreferrer' }
-    : { onClick, type }
+    : { onClick, type, disabled }
 
   return (
     <div
