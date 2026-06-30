@@ -19,7 +19,7 @@ const MIME = {
   '.json': 'application/json',
 }
 
-const PORT = Number(process.env.PORT) || 3000
+const PORT = Number(process.env.PORT) || 64464
 
 const server = http.createServer((req, res) => {
   let url = req.url
